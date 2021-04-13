@@ -1,8 +1,9 @@
 package com.inteca.Inteca.controller;
 
-import com.inteca.Inteca.model.Produkt;
-import com.inteca.Inteca.service.ProduktService;
+import com.inteca.Inteca.model.Product;
+import com.inteca.Inteca.service.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class CreateProductController {
 
-    private final ProduktService produktService;
+    private final ProductService productService;
 
     @RequestMapping(value= {"/addProduct"}, method= RequestMethod.POST)
-    public void createProduct(Produkt produkt) {
-        produktService.createProduct(produkt);
+    public void createProduct(@RequestBody Product product) {
+        productService.createProduct(product);
     }
 }

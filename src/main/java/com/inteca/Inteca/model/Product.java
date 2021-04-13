@@ -5,9 +5,9 @@ import javax.persistence.*;
 
 @Entity(name = "product")
 @Data
-public class Produkt {
+public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "credit_id")
     private long creditId;
     @Column(name = "product_name")

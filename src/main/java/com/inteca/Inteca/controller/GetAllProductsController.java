@@ -1,8 +1,8 @@
 package com.inteca.Inteca.controller;
 
 
-import com.inteca.Inteca.model.Produkt;
-import com.inteca.Inteca.service.ProduktService;
+import com.inteca.Inteca.model.Product;
+import com.inteca.Inteca.service.ProductService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,10 +15,10 @@ import java.util.List;
 @AllArgsConstructor
 public class GetAllProductsController {
 
-    private final ProduktService produktService;
+    private final ProductService productService;
 
     @RequestMapping(value= {"/products"}, method= RequestMethod.GET)
-    public List<Produkt> getAllProducts() {
-        return produktService.getProducts();
+    public List<Product> getAllProducts() {
+        return productService.getProducts();
     }
 }

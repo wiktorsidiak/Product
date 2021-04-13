@@ -1,18 +1,17 @@
 package com.inteca.Inteca.mapper;
 
-import com.inteca.Inteca.model.Produkt;
+import com.inteca.Inteca.model.Product;
 import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-public class ProductMapper implements RowMapper<Produkt> {
+public class ProductMapper implements RowMapper<Product> {
     @Override
-    public Produkt mapRow(ResultSet resultSet, int rowNum) throws SQLException {
-        Produkt produkt = new Produkt();
-        produkt.setCreditId(resultSet.getLong("credit_id"));
-        produkt.setProductName(resultSet.getString("product_name"));
-        produkt.setProductValue(resultSet.getFloat("product_value"));
-        return produkt;
+    public Product mapRow(ResultSet resultSet, int rowNum) throws SQLException {
+        Product product= new Product();
+        product.setCreditId(resultSet.getLong("credit_id"));
+        product.setProductName(resultSet.getString("product_name"));
+        product.setProductValue(resultSet.getFloat("product_value"));
+        return product;
 
     }
 }
