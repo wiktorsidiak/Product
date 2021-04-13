@@ -1,6 +1,6 @@
 package com.inteca.Inteca.service;
 
-import com.inteca.Inteca.dao.ProductDAOImpl;
+import com.inteca.Inteca.dao.ProductDAO;
 import com.inteca.Inteca.model.Produkt;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -10,11 +10,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProduktServiceImpl implements ProduktService{
 
-    private ProductDAOImpl productDAO;
+    private final ProductDAO productDAO;
 
     @Override
     public void createProduct(Produkt produkt) {
-    productDAO.createProduct(produkt);
+     productDAO.createProduct(produkt);
     }
 
     @Override
